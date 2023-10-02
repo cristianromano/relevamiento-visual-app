@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: normal;
+  margin-top: 50px;
+}
+
+ion-card-content {
+  height: 200px;
+}
+
+.botones {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: space-around;
+}
+
+ion-img {
+  height: 200px;
+}
