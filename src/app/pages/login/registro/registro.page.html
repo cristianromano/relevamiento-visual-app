@@ -34,6 +34,9 @@
             style="margin-left: 30%"
             >Email invalido</ion-label
           >
+          <ion-label *ngIf="hasError == true " color="danger"
+            >{{errorCode}}</ion-label
+          >
         </ion-card-content>
         <div>
           <ion-img src="./assets/calculadora.png"></ion-img>

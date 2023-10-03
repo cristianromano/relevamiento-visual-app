@@ -7,9 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { RegistroPageRoutingModule } from './registro-routing.module';
 
 import { RegistroPage } from './registro.page';
-
+import { HomePageModule } from 'src/app/home/home.module';
 @NgModule({
   imports: [
+    HomePageModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,

@@ -19,6 +19,8 @@ import {
 })
 export class RegistroPage implements OnInit {
   form: FormGroup;
+  errorCode?: string;
+  hasError: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -54,7 +56,12 @@ export class RegistroPage implements OnInit {
         this.router.navigate(['/home']);
       })
       .catch((e) => {
-        console.log(e.code);
+        this.hasError = true;
+        setTimeout(() => {
+          this.hasError = false;
+        }, 3000);
+        this.hasError = true;
+        this.errorCode = e.code;
       });
   }
 }

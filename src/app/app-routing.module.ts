@@ -10,15 +10,6 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  {
-    path: 'home',
-    component: HomePage,
-  },
-  {
-    path: '',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginPageModule),
-  },
 ];
 
 @NgModule({
