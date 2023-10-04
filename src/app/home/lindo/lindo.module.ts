@@ -9,12 +9,7 @@ import { LindoPageRoutingModule } from './lindo-routing.module';
 import { LindoPage } from './lindo.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    LindoPageRoutingModule
-  ],
-  declarations: [LindoPage]
+  imports: [CommonModule, FormsModule, IonicModule, LindoPageRoutingModule],
+  declarations: [LindoPage],
 })
 export class LindoPageModule {}

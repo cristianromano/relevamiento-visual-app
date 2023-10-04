@@ -8,8 +8,10 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { RegistroPageModule } from './registro/registro.module';
+import { HomePageModule } from 'src/app/home/home.module';
 @NgModule({
   imports: [
+    HomePageModule,
     RegistroPageModule,
     ReactiveFormsModule,
     CommonModule,

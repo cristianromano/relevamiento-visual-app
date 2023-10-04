@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "practica-profesional-5cee0": {
+      "hosting": {
+        "app": [
+          "practica-profesional-5cee0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "practica-profesional-5cee0"
+  }
+}
