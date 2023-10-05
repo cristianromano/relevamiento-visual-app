@@ -10,9 +10,12 @@
       <img
         [src]="post.imagen"
         alt="Imagen del post"
-        style="height: 500px; width: 400px; border: 1px solid red"
+        style="height: 500px; width: 400px"
       />
       <!-- Otros datos del post -->
+      <ion-label>LIKES {{post.likes}}</ion-label>
     </div>
+    <ion-button (click)="darLike()">DAR LIKE</ion-button>
+    <ion-button (click)="irLindo()">IR ATRAS</ion-button>
   </div>
 </ion-content>

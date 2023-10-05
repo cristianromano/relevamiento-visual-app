@@ -10,12 +10,12 @@ import { RegistroPage } from './registro.page';
 import { HomePageModule } from 'src/app/home/home.module';
 @NgModule({
   imports: [
-    HomePageModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicModule,
     RegistroPageRoutingModule,
+    HomePageModule,
   ],
   declarations: [RegistroPage],
 })

@@ -12,4 +12,8 @@ export class HomePage {
   redirigirLindo() {
     this.route.navigate(['/home/lindo']);
   }
+
+  redirigirFeo() {
+    this.route.navigate(['/home/feo']);
+  }
 }

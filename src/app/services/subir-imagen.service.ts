@@ -45,4 +45,33 @@ export class SubirImagenService {
       }
     });
   }
+
+  writeImageDataFeo(
+    userId: string,
+    imageId: string,
+    imageUrl: string,
+    likes: string
+  ) {
+    // Crear una referencia al nodo "imagenes" utilizando el userId e imageId como clave
+    const imagenRef = ref(this.db, `imagenes/feo/`);
+    const postImg = push(imagenRef);
+    set(postImg, {
+      id_usuario: userId,
+      imagen: imageId,
+      nombre_img: imageUrl,
+      likes: likes,
+    });
+  }
+
+  mostrarImgFeo() {
+    onValue(ref(this.db, '/imagenes/feo/'), (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        // const dataArr = Object.values(data);
+        this.dataSubject.next(data);
+      } else {
+        this.dataSubject.next([]);
+      }
+    });
+  }
 }

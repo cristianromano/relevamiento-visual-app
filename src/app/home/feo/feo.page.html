@@ -1,13 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>feo</ion-title>
+    <ion-button (click)="irHome()">A home</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">feo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-input type="file" (change)="onFileSelected($event)" />
+  <ion-button (click)="uploadFile()">Subir Archivo</ion-button>
+  <div class="flex">
+    <div *ngFor="let post of recentPosts" (click)="verDetallesImagen(post.key)">
+      <!-- Aquí puedes mostrar la información de cada post -->
+      <img
+        [src]="post.imagen"
+        alt="Imagen del post"
+        style="height: 100px; width: 90px; border: 1px solid red"
+      />
+      <!-- Otros datos del post -->
+    </div>
+  </div>
 </ion-content>

@@ -49,4 +49,8 @@ export class LindoPage implements OnInit {
   verDetallesImagen(id: string) {
     this.router.navigate(['/detalle', id]);
   }
+
+  irHome() {
+    this.router.navigate(['/home']);
+  }
 }
