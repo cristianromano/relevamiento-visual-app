@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detalleLindo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="flex">
+    <div *ngFor="let post of datosImg">
+      <img
+        [src]="post.imagen"
+        alt="Imagen del post"
+        style="height: 500px; width: 400px; border: 1px solid red"
+      />
+      <!-- Otros datos del post -->
+    </div>
+  </div>
+</ion-content>

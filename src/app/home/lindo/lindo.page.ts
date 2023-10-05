@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SubirImagenService } from 'src/app/services/subir-imagen.service';
 import { SubirStorageService } from 'src/app/services/subir-storage.service';
 import { Auth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-lindo',
   templateUrl: './lindo.page.html',
@@ -11,15 +12,16 @@ export class LindoPage implements OnInit {
   selectedFile?: File;
   imagen?: string;
   user = this.auth.currentUser;
+  recentPosts: any[] = [];
   constructor(
     private subirImg: SubirImagenService,
     private storage: SubirStorageService,
-    private auth: Auth
+    private auth: Auth,
+    private router: Router
   ) {}
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
-    debugger;
   }
 
   async uploadFile() {
@@ -29,10 +31,22 @@ export class LindoPage implements OnInit {
         `${this.user?.uid}`,
         this.imagen,
         this.selectedFile.name,
-        '16'
+        '0'
       );
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subirImg.mostrarImg();
+    this.subirImg.data$.subscribe((data) => {
+      this.recentPosts = Object.entries(data).map(([key, value]) => {
+        return { key, ...value };
+      });
+    });
+    //this.recentPosts.push(this.subirImg.mostrarImg(String(this.user)));
+  }
+
+  verDetallesImagen(id: string) {
+    this.router.navigate(['/detalle', id]);
+  }
 }
