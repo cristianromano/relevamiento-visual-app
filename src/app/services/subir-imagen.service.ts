@@ -31,6 +31,7 @@ export class SubirImagenService {
       imagen: imageId,
       nombre_img: imageUrl,
       likes: likes,
+      user_like: '',
     });
   }
 
@@ -60,6 +61,7 @@ export class SubirImagenService {
       imagen: imageId,
       nombre_img: imageUrl,
       likes: likes,
+      user_like: '',
     });
   }
 

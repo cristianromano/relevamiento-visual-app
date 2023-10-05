@@ -1,13 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalle-feo</ion-title>
+    <ion-title>detalle</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle-feo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="flex">
+    <div *ngFor="let post of datosImg">
+      <img
+        [src]="post.imagen"
+        alt="Imagen del post"
+        style="height: 500px; width: 400px"
+      />
+      <ion-label>LIKES {{post.likes}}</ion-label>
+    </div>
+    <ion-button (click)="darLike()">DAR LIKE</ion-button>
+    <ion-button (click)="irFeo()">IR ATRAS</ion-button>
+  </div>
 </ion-content>

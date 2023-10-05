@@ -11,6 +11,7 @@ import {
 } from 'firebase/database';
 import { environment } from 'src/environments/environment';
 import { Auth } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-detalle-lindo',
   templateUrl: './detalle-lindo.page.html',

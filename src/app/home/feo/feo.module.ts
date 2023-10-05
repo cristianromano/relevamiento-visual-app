@@ -9,12 +9,7 @@ import { FeoPageRoutingModule } from './feo-routing.module';
 import { FeoPage } from './feo.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    FeoPageRoutingModule
-  ],
-  declarations: [FeoPage]
+  imports: [CommonModule, FormsModule, IonicModule, FeoPageRoutingModule],
+  declarations: [FeoPage],
 })
 export class FeoPageModule {}

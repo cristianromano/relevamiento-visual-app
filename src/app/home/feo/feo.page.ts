@@ -48,7 +48,7 @@ export class FeoPage implements OnInit {
   }
 
   verDetallesImagen(id: string) {
-    this.router.navigate(['/detalle', id]);
+    this.router.navigate(['/detalle-feo', id]);
   }
 
   irHome() {

@@ -6,12 +6,15 @@ import { FeoPage } from './feo.page';
 const routes: Routes = [
   {
     path: '',
-    component: FeoPage
+    component: FeoPage,
   },
   {
-    path: 'detalle-feo',
-    loadChildren: () => import('./detalle-feo/detalle-feo.module').then( m => m.DetalleFeoPageModule)
-  }
+    path: 'detalle-feo/:id',
+    loadChildren: () =>
+      import('./detalle-feo/detalle-feo.module').then(
+        (m) => m.DetalleFeoPageModule
+      ),
+  },
 ];
 
 @NgModule({
