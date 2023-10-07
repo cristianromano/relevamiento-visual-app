@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Auth, getAuth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-login',
@@ -48,5 +49,62 @@ export class LoginPage implements OnInit {
       .catch((e) => {
         console.log(e.code);
       });
+  }
+
+  async singAdmin() {
+    await signInWithEmailAndPassword(this.auth, 'admin@admin.com', '111111');
+    SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+    this.router.navigate(['/home']);
+  }
+
+  async singUser() {
+    await signInWithEmailAndPassword(
+      this.auth,
+      'invitado@invitado.com',
+      '222222'
+    );
+    SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+    this.router.navigate(['/home']);
+  }
+
+  async singInvitado() {
+    await signInWithEmailAndPassword(
+      this.auth,
+      'usuario@usuario.com',
+      '333333'
+    );
+    SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+    this.router.navigate(['/home']);
+  }
+
+  async singAnonimo() {
+    await signInWithEmailAndPassword(
+      this.auth,
+      'anonimo@anonimo.com',
+      '444444'
+    );
+    SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+    this.router.navigate(['/home']);
+  }
+
+  async singTester() {
+    await signInWithEmailAndPassword(this.auth, 'tester@tester.com', '555555');
+    SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+    this.router.navigate(['/home']);
   }
 }

@@ -14,8 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPageModule } from './pages/login/login.module';
 import { RegistroPageModule } from './pages/login/registro/registro.module';
 import { provideStorage, getStorage } from '@angular/fire/storage';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -30,6 +30,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     LoginPageModule,
     RegistroPageModule,
     provideDatabase(() => getDatabase()),
+    NgApexchartsModule,
   ],
   providers: [
     {

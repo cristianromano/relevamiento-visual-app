@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { LindoPageModule } from './lindo/lindo.module';
 import { FeoPageModule } from './feo/feo.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +15,7 @@ import { FeoPageModule } from './feo/feo.module';
     HomePageRoutingModule,
     LindoPageModule,
     FeoPageModule,
+    NgApexchartsModule,
   ],
   declarations: [HomePage],
 })

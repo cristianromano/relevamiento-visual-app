@@ -49,6 +49,19 @@
             >Registrarse</ion-button
           >
         </div>
+        <div class="users">
+          <ion-button color="tertiary" (click)="singAdmin()">Admin</ion-button>
+          <ion-button color="danger" (click)="singInvitado()"
+            >Invitado</ion-button
+          >
+          <ion-button color="tertiary" (click)="singUser()">Usuario</ion-button>
+          <ion-button color="danger" (click)="singAnonimo()"
+            >Anonimo</ion-button
+          >
+          <ion-button color="tertiary" (click)="singTester()"
+            >Tester</ion-button
+          >
+        </div>
       </ion-card>
     </form>
   </div>

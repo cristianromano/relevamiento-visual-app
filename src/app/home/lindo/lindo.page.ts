@@ -3,6 +3,13 @@ import { SubirImagenService } from 'src/app/services/subir-imagen.service';
 import { SubirStorageService } from 'src/app/services/subir-storage.service';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexTitleSubtitle,
+  ApexDataLabels,
+} from 'ng-apexcharts';
+import * as ApexCharts from 'apexcharts';
 @Component({
   selector: 'app-lindo',
   templateUrl: './lindo.page.html',
@@ -14,13 +21,19 @@ export class LindoPage implements OnInit {
   user = this.auth.currentUser;
   recentPosts: any[] = [];
   orderArr: any[] = [];
+  chartSeries: ApexAxisChartSeries = [];
+  chart: ApexChart = {
+    type: 'pie',
+    width: 300,
+    height: 300,
+  };
+
   constructor(
     private subirImg: SubirImagenService,
     private storage: SubirStorageService,
     private auth: Auth,
     private router: Router
   ) {}
-
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
@@ -44,6 +57,12 @@ export class LindoPage implements OnInit {
         return { key, ...value };
       });
       this.sortByLikes();
+      this.chartSeries = this.recentPosts.map((post) => ({
+        name: post.id_usuario, // Nombre del elemento
+        data: [parseInt(post.likes, 10)], // Valor "like" como dato
+      }));
+
+      console.log(this.chartSeries);
     });
 
     //this.recentPosts.push(this.subirImg.mostrarImg(String(this.user)));

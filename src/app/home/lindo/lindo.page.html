@@ -9,7 +9,6 @@
   <ion-button (click)="uploadFile()">Subir Archivo</ion-button>
   <div class="flex">
     <div *ngFor="let post of recentPosts" (click)="verDetallesImagen(post.key)">
-      <!-- Aquí puedes mostrar la información de cada post -->
       <img
         [src]="post.imagen"
         alt="Imagen del post"
@@ -17,4 +16,7 @@
       />
     </div>
   </div>
+  <!-- <div>
+    <apx-chart [series]="chartSeries" [chart]="chart"> </apx-chart>
+  </div> -->
 </ion-content>

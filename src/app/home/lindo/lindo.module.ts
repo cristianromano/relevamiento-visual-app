@@ -7,9 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { LindoPageRoutingModule } from './lindo-routing.module';
 
 import { LindoPage } from './lindo.page';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, LindoPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    LindoPageRoutingModule,
+    NgApexchartsModule,
+  ],
   declarations: [LindoPage],
 })
 export class LindoPageModule {}
