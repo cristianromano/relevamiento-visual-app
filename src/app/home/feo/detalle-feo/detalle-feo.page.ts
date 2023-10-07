@@ -31,7 +31,6 @@ export class DetalleFeoPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    debugger;
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
 
@@ -57,7 +56,6 @@ export class DetalleFeoPage implements OnInit {
 
   darLike() {
     // this.arr = this.datosImg[0].user_like;
-    debugger;
     if (this.datosImg[0].user_like == '') {
       const refImg = ref(this.db, `/imagenes/feo/${this.id}`);
       const refImgLikes = ref(this.db, `/imagenes/feo/${this.id}/user_like`);

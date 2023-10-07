@@ -29,7 +29,7 @@ export class FeoPage implements OnInit {
     if (this.selectedFile) {
       this.imagen = await this.storage.subirArchivo(this.selectedFile, 'feo');
       this.subirImg.writeImageDataFeo(
-        `${this.user?.uid}`,
+        `${this.user?.email}`,
         this.imagen,
         this.selectedFile.name,
         '0'
@@ -43,8 +43,14 @@ export class FeoPage implements OnInit {
       this.recentPosts = Object.entries(data).map(([key, value]) => {
         return { key, ...value };
       });
+      this.sortByLikes();
     });
+
     //this.recentPosts.push(this.subirImg.mostrarImg(String(this.user)));
+  }
+
+  sortByLikes() {
+    this.recentPosts.sort((a, b) => b.likes - a.likes);
   }
 
   verDetallesImagen(id: string) {

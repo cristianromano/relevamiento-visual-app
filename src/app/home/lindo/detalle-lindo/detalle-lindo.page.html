@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalleLindo</ion-title>
+    <ion-title>Cosas Lindas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,9 +13,14 @@
         style="height: 500px; width: 400px"
       />
       <!-- Otros datos del post -->
-      <ion-label>LIKES {{post.likes}}</ion-label>
+      <div class="labels">
+        <ion-label>LIKES {{post.likes}}</ion-label>
+        <ion-label>subido por {{post.id_usuario}}</ion-label>
+      </div>
     </div>
-    <ion-button (click)="darLike()">DAR LIKE</ion-button>
-    <ion-button (click)="irLindo()">IR ATRAS</ion-button>
+    <div class="botones">
+      <ion-button (click)="darLike()">DAR LIKE</ion-button>
+      <ion-button (click)="irLindo()">IR ATRAS</ion-button>
+    </div>
   </div>
 </ion-content>
